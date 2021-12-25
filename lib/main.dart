@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:imtihon/core/themes/main_theme.dart';
 import 'package:imtihon/providers/bottom_provider.dart';
+import 'package:imtihon/screens/auth/launch/launch_page.dart';
+import 'package:imtihon/widgets/bottom_bar.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -31,9 +33,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: MainTheme.light,
       //home: const HomePage(),
-      home: MyBottomNavigationBar(),
+      //home: MyBottomNavigationBar(),
+      home: LaunchPage(),
     );
   }
 }
-
-MyBottomNavigationBar() {}

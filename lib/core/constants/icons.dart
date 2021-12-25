@@ -63,5 +63,7 @@ class MyIcons {
   static const vector = 'assets/icons/Vector.svg';
   static const voiceTwo = 'assets/icons/Voice_2.svg';
   static const voice = 'assets/icons/Voice.svg';
-  static const weChat = 'assets/icons/weChat.svg';  
+  static const weChat = 'assets/icons/weChat.svg'; 
+  static const textlogo = 'assets/icons/dogdom.svg';  
+  
 }
