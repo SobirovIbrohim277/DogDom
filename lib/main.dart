@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:imtihon/core/themes/main_theme.dart';
 import 'package:imtihon/providers/bottom_provider.dart';
 import 'package:imtihon/screens/auth/launch/launch_page.dart';
+import 'package:imtihon/screens/home/home_select_page.dart';
 import 'package:imtihon/widgets/bottom_bar.dart';
 import 'package:provider/provider.dart';
 
@@ -34,7 +35,8 @@ class MyApp extends StatelessWidget {
       theme: MainTheme.light,
       //home: const HomePage(),
       //home: MyBottomNavigationBar(),
-      home: LaunchPage(),
+      //home: LaunchPage(),
+      home: HomeSelectPage(),
     );
   }
 }
