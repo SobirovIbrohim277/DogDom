@@ -56,14 +56,23 @@ class MyIcons {
   static const searchSmall = 'assets/icons/Search_Small.svg';
   static const setSvg = 'assets/icons/Set.svg';
   static const smile = 'assets/icons/Smile.svg';
+  static const smile2 = 'assets/icons/Smile_2.svg';
   static const switchFill = 'assets/icons/Switch_fill.svg';
   static const twitter = 'assets/icons/Twitter.svg';
   static const userFill = 'assets/icons/User_fill.svg';
   static const user = 'assets/icons/User.svg';
   static const vector = 'assets/icons/Vector.svg';
-  static const voiceTwo = 'assets/icons/Voice_2.svg';
+  static const voiceTwo = 'assets/icons/Voice_2_fill.svg';
   static const voice = 'assets/icons/Voice.svg';
-  static const weChat = 'assets/icons/weChat.svg'; 
-  static const textlogo = 'assets/icons/dogdom.svg';  
+  static const weChat = 'assets/icons/weChat.svg';  
+  static const textLogo = 'assets/icons/text_logo.svg'; 
+
+  // home_page_icons 
+  static const fosterCare = 'assets/icons/Foster_care.png';  
+  static const revelation = 'assets/icons/Revelation.png';  
+  static const nearby = 'assets/icons/Nearby.png';  
+  static const surrounding = 'assets/icons/Surrounding.png';  
+  static const discuss = 'assets/icons/Discuss.png';  
+  static const ranking = 'assets/icons/Ranking.png';  
   
 }

@@ -1,51 +1,49 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:imtihon/core/constants/colors.dart';
 import 'package:imtihon/core/constants/icons.dart';
+import 'package:imtihon/core/constants/images.dart';
+import 'package:imtihon/core/constants/imports.dart';
 import 'package:imtihon/core/constants/size_config.dart';
+import 'package:imtihon/providers/text_field_provider.dart';
+import 'package:imtihon/view/screens/home/home_page.dart';
 import 'package:imtihon/view/widgets/my_auth_text_field.dart';
+import 'package:imtihon/view/widgets/text/my_text_regular.dart';
 
-class SignInPage extends StatelessWidget {
-  const SignInPage({Key? key}) : super(key: key);
+
+class SignPage extends StatelessWidget {
+  const SignPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    var controoo = TextEditingController(text: "");
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Container(
         width: SizeConfig.screenWidth,
-        height: SizeConfig.screenHeight,
         child: Container(
           color: blackConst.withOpacity(0.7),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SizedBox(
-                height: getUniqueH(157.0),
-              ),
-              SvgPicture.asset(
-                MyIcons.textLogo,
-                color: whiteConst,
-                width: getUniqueW(180.0),
-              ),
+              SizedBox(height: getUniqueH(157.0)),
+
+              // LOGO SECTION
+              SvgPicture.asset(MyIcons.textLogo,
+                  color: whiteConst, width: getUniqueW(180.0)),
+
+              // TEXTFIELD SECTION
               Container(
+                //height: getUniqueH(60.0),
                 margin: EdgeInsets.zero,
-                padding: EdgeInsets.fromLTRB(
-                  getUniqueW(28.0),
-                  getUniqueH(39.95),
-                  getUniqueW(28.0),
-                  getUniqueH(16.0),
-                ),
-                child: MyAuthTextField(
-                  hintText: '',
-                  textInputType: TextInputType.phone,
-                  labelText: "",
-                  controller: controoo,
-                ),
+                padding: EdgeInsets.fromLTRB(getUniqueW(28.0), getUniqueH(40.0), getUniqueW(28.0), getUniqueH(16.0)),
+                child: MyAuthTextField(controller: Provider.of<TextFieldProvider>(context).textController, 
+                hintText: '', textInputType: TextInputType.phone, labelText: ""),
               ),
+
+              // BUTTON SECTION
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> const HomePage()));
+                },
                 child: const Text("Get Captcha"),
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
@@ -53,51 +51,48 @@ class SignInPage extends StatelessWidget {
                       getUniqueW(30.0),
                     ),
                   ),
-                  primary: whiteConst,
+                  primary: redConst,
                   fixedSize: Size(
                     getUniqueW(319.0),
                     getUniqueH(60.0),
                   ),
                 ),
               ),
+
+              //TEXT SECTION
               Container(
-                child: Text(
-                  "Password to Login",
-                  style: TextStyle(
-                    fontSize: getUniqueW(13.0),
-                    fontWeight: FontWeight.w400,
-                    color: whiteConst,
-                  ),
-                ),
+                child: MyTextRegular(
+                    data: "Password to Login", size: 13, color: whiteConst),
                 padding: EdgeInsets.only(
                   left: getUniqueW(35.0),
                   top: getUniqueH(10.0),
                 ),
                 alignment: Alignment.centerLeft,
               ),
+
               const Spacer(),
+
+              // BOTTOM TEXT SECTION
               Container(
-                padding: EdgeInsets.only(
-                  bottom: getUniqueH(16.0),
-                ),
+                padding: EdgeInsets.only(bottom: getUniqueH(16.0)),
                 width: getUniqueW(260.0),
-                child: Text(
-                  "By signing in, you agree to the User Agreement and Privacy Terms.",
-                  style: TextStyle(
-                    fontSize: getUniqueW(13.0),
-                    fontWeight: FontWeight.w400,
-                    color: whiteConst,
-                  ),
+                child: MyTextRegular(
+                  data:
+                      'By signing in, you agree to the User Agreement and Privacy Terms.',
+                  size: 13,
+                  color: whiteConst,
                   textAlign: TextAlign.center,
                 ),
               ),
             ],
           ),
         ),
+
+        //  BACKGROUND IMAGE
         decoration: const BoxDecoration(
           image: DecorationImage(
             fit: BoxFit.cover,
-            image: AssetImage("assets/images/login.png"),
+            image: AssetImage(MyImages.photoPng),
           ),
         ),
       ),
