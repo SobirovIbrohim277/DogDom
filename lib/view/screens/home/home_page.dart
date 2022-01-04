@@ -38,13 +38,17 @@ class HomePage extends StatelessWidget {
       child: ListView.builder(
         padding: EdgeInsets.zero,
         physics: const BouncingScrollPhysics(),
-        itemCount: 3,
+        itemCount: 10,
         itemBuilder: (context, index) {
           return Container(
             height: 300,
             width: 500,
             color: Colors.amber,
             margin: const EdgeInsets.all(10),
+            child: Image.network(
+              "https://source.unsplash.com/random/${index + 1}",
+              fit: BoxFit.cover,
+            ),
           );
         },
       ),
@@ -67,7 +71,6 @@ class HomePage extends StatelessWidget {
             width: getUniqueW(339.0),
             height: getUniqueH(190.0),
             alignment: Alignment.bottomLeft,
-            // BUTTON
             child: Padding(
               padding: EdgeInsets.only(
                 left: getUniqueW(24.0),
@@ -85,6 +88,7 @@ class HomePage extends StatelessWidget {
                 child: MyTextRegular(
                   data: 'Let me',
                   size: 12,
+                  maxLines: 1,
                 ),
               ),
             ),

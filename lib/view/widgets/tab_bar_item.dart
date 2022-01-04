@@ -23,7 +23,7 @@ class TapBarItem extends StatelessWidget {
            image,
             width: getUniqueW(40.0),
           ),
-          MyTextRegular(data: text, size: 13)
+          MyTextRegular(data: text, size: 13,maxLines: 1,)
         ],
       ),
     );

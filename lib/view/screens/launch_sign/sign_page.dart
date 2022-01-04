@@ -73,6 +73,7 @@ class SignPage extends StatelessWidget {
                   data: "Password to Login",
                   size: 13,
                   color: white,
+                  maxLines: 1,
                 ),
                 padding: EdgeInsets.only(
                   left: getUniqueW(35.0),
@@ -90,6 +91,7 @@ class SignPage extends StatelessWidget {
                   size: 13,
                   color: white,
                   textAlign: TextAlign.center,
+                  maxLines: 2,
                 ),
               ),
             ],

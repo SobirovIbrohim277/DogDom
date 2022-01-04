@@ -30,8 +30,8 @@ class MyApp extends StatelessWidget {
         fontFamily: "SFProDisplay",
         primarySwatch: Colors.blue,
       ),
-      //home: const LaunchPage(),
-      home: CirclePage(),
+      home: const LaunchPage(),
+      //home: CirclePage(),
     );
   }
 }

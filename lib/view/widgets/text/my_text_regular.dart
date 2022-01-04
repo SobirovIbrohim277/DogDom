@@ -12,7 +12,7 @@ class MyTextRegular extends StatelessWidget {
       required this.size,
       this.textAlign,
       this.color,
-      Key? key})
+      Key? key, required int maxLines})
       : super(key: key);
 
   @override

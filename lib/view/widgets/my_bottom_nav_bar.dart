@@ -3,9 +3,12 @@ import 'package:imtihon/core/constants/colors.dart';
 import 'package:imtihon/core/constants/icons.dart';
 import 'package:imtihon/core/constants/imports.dart';
 import 'package:imtihon/providers/bottom_nav_bar_provider.dart';
+import 'package:provider/src/provider.dart';
 
 class MyBottomNavBar extends StatelessWidget {
-  const MyBottomNavBar({Key? key}) : super(key: key);
+  const MyBottomNavBar({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
