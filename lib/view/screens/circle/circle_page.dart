@@ -135,13 +135,13 @@ class CirclePage extends StatelessWidget {
       backgroundColor: white,
       body: Column(
         children: [
-          buildAppBar(),
-          buildTextField(context),
-          buildHorizontalScroll(),
-          buildSectionTitle('Popular circle'),
+          appBar(),
+          textField(context),
+          horizontalScroll(),
+          sectionTitle('Popular circle'),
           MyCirclesListView(),
           SizedBox(height: getUniqueH(10.0)),
-          buildSectionTitle('The Circle to Join'),
+          sectionTitle('The Circle to Join'),
           Flexible(
             child: ListView.builder(
               padding: EdgeInsets.symmetric(
@@ -181,12 +181,14 @@ class CirclePage extends StatelessWidget {
                           children: [
                             MyTextRegular(
                               data: 'I love Golden Retriever',
-                              size: getUniqueW(16.0), maxLines: 1,
+                              size: getUniqueW(16.0),
+                              maxLines: 1,
                             ),
                             MyTextRegular(
                               data: '548 Members',
                               size: getUniqueW(16.0),
-                              color: black.withOpacity(0.4), maxLines: 1,
+                              color: black.withOpacity(0.4),
+                              maxLines: 1,
                             ),
                           ],
                         ),
@@ -219,32 +221,53 @@ class CirclePage extends StatelessWidget {
     );
   }
 
-  Widget buildSectionTitle(String title) {
-    return Container(
-      height: getUniqueH(35.0),
-      alignment: Alignment.bottomCenter,
-      padding: EdgeInsets.symmetric(
-        horizontal: getUniqueW(18.0),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          MyTextMedium(data: title, size: 20),
-          InkWell(
-            onTap: () {},
-            child: MyTextRegular(
-              data: 'More',
-              size: 13,
-              color: black.withOpacity(0.4), maxLines: 1,
+  Widget appBar() {
+    return SafeArea(
+      child: Padding(
+        padding: EdgeInsets.symmetric(
+          horizontal: getUniqueW(18.0),
+          vertical: getUniqueH(18.0),
+        ),
+        child: Row(
+          children: [
+            MyTextSemibold(data: 'Circle', size: 24),
+            const Spacer(),
+            IconButton(
+              onPressed: () {},
+              icon: SvgPicture.asset(
+                MyIcons.scan,
+                width: getUniqueW(24.0),
+              ),
             ),
-          ),
-        ],
+            SizedBox(
+              width: getUniqueW(25.0),
+            ),
+            IconButton(
+              onPressed: () {},
+              icon: SvgPicture.asset(
+                MyIcons.add,
+                width: getUniqueW(24.0),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
 
-  Widget buildHorizontalScroll() {
+  Widget textField(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.symmetric(
+        horizontal: getUniqueW(18.0),
+      ),
+      child: MySearchTextField(
+        controller: context.watch<SearchFieldProvider>().searchController,
+        hintText: '',
+      ),
+    );
+  }
+
+  Widget horizontalScroll() {
     return Container(
       margin: EdgeInsets.only(
         top: getUniqueH(20),
@@ -277,48 +300,28 @@ class CirclePage extends StatelessWidget {
     );
   }
 
-  Widget buildTextField(BuildContext context) {
-    return Padding(
+  Widget sectionTitle(String title) {
+    return Container(
+      height: getUniqueH(35.0),
+      alignment: Alignment.bottomCenter,
       padding: EdgeInsets.symmetric(
         horizontal: getUniqueW(18.0),
       ),
-      child: MySearchTextField(
-        controller: context.watch<SearchFieldProvider>().searchController,
-        hintText: '',
-      ),
-    );
-  }
-
-  Widget buildAppBar() {
-    return SafeArea(
-      child: Padding(
-        padding: EdgeInsets.symmetric(
-          horizontal: getUniqueW(18.0),
-          vertical: getUniqueH(18.0),
-        ),
-        child: Row(
-          children: [
-            MyTextSemibold(data: 'Circle', size: 24),
-            const Spacer(),
-            IconButton(
-              onPressed: () {},
-              icon: SvgPicture.asset(
-                MyIcons.scan,
-                width: getUniqueW(24.0),
-              ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          MyTextMedium(data: title, size: 20),
+          InkWell(
+            onTap: () {},
+            child: MyTextRegular(
+              data: 'More',
+              size: 13,
+              color: black.withOpacity(0.4),
+              maxLines: 1,
             ),
-            SizedBox(
-              width: getUniqueW(25.0),
-            ),
-            IconButton(
-              onPressed: () {},
-              icon: SvgPicture.asset(
-                MyIcons.add,
-                width: getUniqueW(24.0),
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
