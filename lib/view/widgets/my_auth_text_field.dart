@@ -11,7 +11,6 @@ class MyAuthTextField extends StatelessWidget {
   Widget? suffixIcon;
 
   String? Function(String?)? validator;
-  
 
   MyAuthTextField({
     required this.controller,
@@ -22,7 +21,6 @@ class MyAuthTextField extends StatelessWidget {
     this.validator,
     Key? key,
   }) : super(key: key);
-
 
   @override
   Widget build(BuildContext context) {
@@ -41,25 +39,27 @@ class MyAuthTextField extends StatelessWidget {
       decoration: InputDecoration(
         suffixIcon: suffixIcon,
         hintText: hintText,
-        //labelText: labelText,
-        //alignLabelWithHint: true,
         filled: true,
-      
-        fillColor: whiteConst.withOpacity(0.25),
-        contentPadding: EdgeInsets.symmetric(vertical: getUniqueH(18.0), horizontal: getUniqueW(28.0)),
+        fillColor: white.withOpacity(0.25),
+        contentPadding: EdgeInsets.symmetric(
+          vertical: getUniqueH(18.0),
+          horizontal: getUniqueW(28.0),
+        ),
         border: UnderlineInputBorder(
-          
           borderSide: const BorderSide(
             style: BorderStyle.none,
             width: 0.0,
           ),
-          
           borderRadius: BorderRadius.circular(
             getUniqueW(30.0),
           ),
         ),
       ),
-      style: TextStyle(color: whiteConst, fontSize: getUniqueW(17.0), fontWeight: FontWeight.w500),
+      style: TextStyle(
+        color: white,
+        fontSize: getUniqueW(17.0),
+        fontWeight: FontWeight.w500,
+      ),
     );
   }
 }

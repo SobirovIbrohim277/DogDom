@@ -11,7 +11,6 @@ class MySearchTextField extends StatelessWidget {
   Widget? suffixIcon;
   Widget? prefixIcon;
   String? Function(String?)? validator;
-  
 
   MySearchTextField({
     required this.controller,
@@ -23,7 +22,6 @@ class MySearchTextField extends StatelessWidget {
     this.validator,
     Key? key,
   }) : super(key: key);
-
 
   @override
   Widget build(BuildContext context) {
@@ -44,27 +42,34 @@ class MySearchTextField extends StatelessWidget {
         suffixIcon: suffixIcon,
         prefixIcon: prefixIcon,
         hintText: hintText,
-        hintStyle: TextStyle(color: blackConst.withOpacity(0.25) ),
+        hintStyle: TextStyle(
+          color: black.withOpacity(0.25),
+        ),
         //labelText: labelText,
         //alignLabelWithHint: true,
 
         filled: true,
-        fillColor: greyConst,
-        
-        contentPadding: EdgeInsets.symmetric(vertical: getUniqueH(6.0), horizontal: getUniqueW(12.0)),
+        fillColor: grey,
+
+        contentPadding: EdgeInsets.symmetric(
+          vertical: getUniqueH(6.0),
+          horizontal: getUniqueW(12.0),
+        ),
         border: UnderlineInputBorder(
-          
           borderSide: const BorderSide(
             style: BorderStyle.none,
             width: 0.0,
           ),
-          
           borderRadius: BorderRadius.circular(
             getUniqueW(30.0),
           ),
         ),
       ),
-      style: TextStyle(color: blackConst, fontSize: getUniqueW(17.0), fontWeight: FontWeight.w500),
+      style: TextStyle(
+        color: black,
+        fontSize: getUniqueW(17.0),
+        fontWeight: FontWeight.w500,
+      ),
     );
   }
 }

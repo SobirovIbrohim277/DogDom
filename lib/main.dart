@@ -4,6 +4,7 @@ import 'package:imtihon/providers/bottom_nav_bar_provider.dart';
 import 'package:imtihon/providers/home_page_provider.dart';
 import 'package:imtihon/providers/search_field_provider.dart';
 import 'package:imtihon/providers/text_field_provider.dart';
+import 'package:imtihon/view/screens/circle/circle_page.dart';
 import 'package:imtihon/view/screens/launch_sign/launch_page.dart';
 
 void main() {
@@ -29,7 +30,8 @@ class MyApp extends StatelessWidget {
         fontFamily: "SFProDisplay",
         primarySwatch: Colors.blue,
       ),
-      home: const LaunchPage(),
+      //home: const LaunchPage(),
+      home: CirclePage(),
     );
   }
 }

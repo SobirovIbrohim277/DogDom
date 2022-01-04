@@ -17,7 +17,7 @@ class SignInPage extends StatelessWidget {
         width: SizeConfig.screenWidth,
         height: SizeConfig.screenHeight,
         child: Container(
-          color: blackConst.withOpacity(0.7),
+          color: black.withOpacity(0.7),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -26,7 +26,7 @@ class SignInPage extends StatelessWidget {
               ),
               SvgPicture.asset(
                 MyIcons.textLogo,
-                color: whiteConst,
+                color: white,
                 width: getUniqueW(180.0),
               ),
               Container(
@@ -53,7 +53,7 @@ class SignInPage extends StatelessWidget {
                       getUniqueW(30.0),
                     ),
                   ),
-                  primary: whiteConst,
+                  primary: white,
                   fixedSize: Size(
                     getUniqueW(319.0),
                     getUniqueH(60.0),
@@ -66,7 +66,7 @@ class SignInPage extends StatelessWidget {
                   style: TextStyle(
                     fontSize: getUniqueW(13.0),
                     fontWeight: FontWeight.w400,
-                    color: whiteConst,
+                    color: white,
                   ),
                 ),
                 padding: EdgeInsets.only(
@@ -86,7 +86,7 @@ class SignInPage extends StatelessWidget {
                   style: TextStyle(
                     fontSize: getUniqueW(13.0),
                     fontWeight: FontWeight.w400,
-                    color: whiteConst,
+                    color: white,
                   ),
                   textAlign: TextAlign.center,
                 ),

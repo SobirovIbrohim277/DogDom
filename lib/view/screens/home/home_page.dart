@@ -19,22 +19,13 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     bool select = context.watch<HomePageProvider>().select;
     return Scaffold(
-      backgroundColor: whiteConst,
+      backgroundColor: white,
       body: Column(
         children: [
-          // SELECT DISCOVER SECTION
           buildAppBar(select, context),
-
-          // SEACH FIELD SECTION
           buildSearchField(context),
-
-          // TOP NAVIGATION BAR
           buildTabBar(select),
-
-          // HORIZONTAL SCROLL CARD
           if (select) buldHorizontalScroll(),
-
-          // VERTICAL SCROLL CARD
           buildVerticalScroll()
         ],
       ),
@@ -44,18 +35,20 @@ class HomePage extends StatelessWidget {
 
   Widget buildVerticalScroll() {
     return Expanded(
-            child: ListView.builder(
-              padding: EdgeInsets.zero,
-                physics: const BouncingScrollPhysics(),
-                itemCount: 3,
-                itemBuilder: (context, index) {
-                  return Container(
-                    height: 300,
-                    width: 500,
-                    color: Colors.amber,
-                    margin: const EdgeInsets.all(10),
-                  );
-                }));
+      child: ListView.builder(
+        padding: EdgeInsets.zero,
+        physics: const BouncingScrollPhysics(),
+        itemCount: 3,
+        itemBuilder: (context, index) {
+          return Container(
+            height: 300,
+            width: 500,
+            color: Colors.amber,
+            margin: const EdgeInsets.all(10),
+          );
+        },
+      ),
+    );
   }
 
   Widget buldHorizontalScroll() {
@@ -66,7 +59,9 @@ class HomePage extends StatelessWidget {
       child: ListView(
         scrollDirection: Axis.horizontal,
         physics: const BouncingScrollPhysics(),
-        padding: EdgeInsets.symmetric(horizontal: getUniqueW(18.0)),
+        padding: EdgeInsets.symmetric(
+          horizontal: getUniqueW(18.0),
+        ),
         children: [
           Container(
             width: getUniqueW(339.0),
@@ -75,13 +70,17 @@ class HomePage extends StatelessWidget {
             // BUTTON
             child: Padding(
               padding: EdgeInsets.only(
-                  left: getUniqueW(24.0), bottom: getUniqueH(30.0)),
+                left: getUniqueW(24.0),
+                bottom: getUniqueH(30.0),
+              ),
               child: ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
-                  primary: blackConst,
+                  primary: black,
                   padding: EdgeInsets.symmetric(
-                      horizontal: getUniqueW(22.5), vertical: getUniqueH(6.0)),
+                    horizontal: getUniqueW(22.5),
+                    vertical: getUniqueH(6.0),
+                  ),
                 ),
                 child: MyTextRegular(
                   data: 'Let me',
@@ -91,8 +90,10 @@ class HomePage extends StatelessWidget {
             ),
             decoration: BoxDecoration(
               image: const DecorationImage(
-                  image: AssetImage(MyImages.homeCard1), fit: BoxFit.cover),
-              color: greyConst,
+                image: AssetImage(MyImages.homeCard1),
+                fit: BoxFit.cover,
+              ),
+              color: grey,
               borderRadius: BorderRadius.circular(
                 getUniqueW(18.0),
               ),
@@ -104,8 +105,10 @@ class HomePage extends StatelessWidget {
             height: getUniqueH(190.0),
             decoration: BoxDecoration(
               image: const DecorationImage(
-                  image: AssetImage(MyImages.homeCard2), fit: BoxFit.cover),
-              color: greyConst,
+                image: AssetImage(MyImages.homeCard2),
+                fit: BoxFit.cover,
+              ),
+              color: grey,
               borderRadius: BorderRadius.circular(
                 getUniqueW(18.0),
               ),
@@ -159,13 +162,15 @@ class HomePage extends StatelessWidget {
 
   Widget buildSearchField(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: getUniqueW(18.0)),
+      padding: EdgeInsets.symmetric(
+        horizontal: getUniqueW(18.0),
+      ),
       child: MySearchTextField(
         controller: context.watch<SearchFieldProvider>().searchController,
         hintText: 'Send the sample',
         suffixIcon: SvgPicture.asset(
           MyIcons.voiceTwo,
-          color: blackConst.withOpacity(0.55),
+          color: black.withOpacity(0.55),
           width: getUniqueW(24.0),
           fit: BoxFit.none,
         ),
@@ -173,7 +178,7 @@ class HomePage extends StatelessWidget {
           MyIcons.searchSmall,
           width: getUniqueW(24.0),
           fit: BoxFit.none,
-          color: blackConst.withOpacity(0.25),
+          color: black.withOpacity(0.25),
         ),
       ),
     );
@@ -182,8 +187,12 @@ class HomePage extends StatelessWidget {
   Widget buildAppBar(bool select, BuildContext context) {
     return SafeArea(
       child: Padding(
-        padding: EdgeInsets.fromLTRB(getUniqueW(18.0), getUniqueH(10.0),
-            getUniqueW(18.0), getUniqueH(10.0)),
+        padding: EdgeInsets.fromLTRB(
+          getUniqueW(18.0),
+          getUniqueH(10.0),
+          getUniqueW(18.0),
+          getUniqueH(10.0),
+        ),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
@@ -198,14 +207,14 @@ class HomePage extends StatelessWidget {
                   MyTextMedium(
                     data: 'Select',
                     size: 17,
-                    color: select ? blackConst : blackConst.withOpacity(0.4),
+                    color: select ? black : black.withOpacity(0.4),
                   ),
                   SizedBox(height: getUniqueH(5.0)),
                   if (select)
                     SvgPicture.asset(
                       MyIcons.smile2,
-                      color: redConst,
-                    )
+                      color: red,
+                    ),
                 ],
               ),
             ),
@@ -220,14 +229,14 @@ class HomePage extends StatelessWidget {
                   MyTextMedium(
                     data: 'Discover',
                     size: 17,
-                    color: !select ? blackConst : blackConst.withOpacity(0.4),
+                    color: !select ? black : black.withOpacity(0.4),
                   ),
                   SizedBox(height: getUniqueH(5.0)),
                   if (!select)
                     SvgPicture.asset(
                       MyIcons.smile2,
-                      color: redConst,
-                    )
+                      color: red,
+                    ),
                 ],
               ),
             ),
@@ -236,8 +245,8 @@ class HomePage extends StatelessWidget {
             SvgPicture.asset(
               MyIcons.notification,
               height: getUniqueH(24.0),
-              color: blackConst.withOpacity(0.3),
-            )
+              color: black.withOpacity(0.3),
+            ),
           ],
         ),
       ),
