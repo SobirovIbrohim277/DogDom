@@ -31,8 +31,7 @@ class MyApp extends StatelessWidget {
         fontFamily: "SFProDisplay",
         primarySwatch: Colors.blue,
       ),
-      //home: const LaunchPage(),
-      home: NoticeCenterPage(),
+      home: const LaunchPage(),
     );
   }
 }
