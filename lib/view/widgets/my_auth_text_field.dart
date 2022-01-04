@@ -24,18 +24,12 @@ class MyAuthTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //isVisible = Provider.of<TextFieldProvider>(context).isVisible;
     SizeConfig().init(context);
     return TextFormField(
       controller: controller,
       validator: validator,
       keyboardType: textInputType,
-      //obscureText: (keyboardType == TextInputType.visiblePassword && isVisible) ? true : false,
-      onChanged: (value) {
-        // Provider.of<TextFieldProvider>(context, listen: false).value =
-        //     value;
-        // context.read<TextFieldProvider>().changValue(value);
-      },
+      onChanged: (value) {},
       decoration: InputDecoration(
         suffixIcon: suffixIcon,
         hintText: hintText,

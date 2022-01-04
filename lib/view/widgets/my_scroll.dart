@@ -54,7 +54,8 @@ class MyHorizontalScrollCard extends StatelessWidget {
             MyTextRegular(
               data: subtitle!,
               size: subtitleSize ?? 13,
-              color: textColor, maxLines: 1,
+              color: textColor,
+              maxLines: 1,
             ),
           if (onpressed != null)
             SizedBox(
@@ -72,7 +73,8 @@ class MyHorizontalScrollCard extends StatelessWidget {
               ),
               child: MyTextRegular(
                 data: buttonText.toString(),
-                size: 12, maxLines: 1,
+                size: 12,
+                maxLines: 1,
               ),
             ),
           if (onpressed != null)
@@ -83,7 +85,10 @@ class MyHorizontalScrollCard extends StatelessWidget {
       ),
       decoration: BoxDecoration(
         image: image != null
-            ? DecorationImage(image: AssetImage(image!), fit: BoxFit.cover)
+            ? DecorationImage(
+                image: AssetImage(image!),
+                fit: BoxFit.cover,
+              )
             : null,
         color: cardColor ?? grey,
         borderRadius: BorderRadius.circular(

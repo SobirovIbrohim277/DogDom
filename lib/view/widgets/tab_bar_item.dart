@@ -20,10 +20,14 @@ class TapBarItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Image.asset(
-           image,
+            image,
             width: getUniqueW(40.0),
           ),
-          MyTextRegular(data: text, size: 13,maxLines: 1,)
+          MyTextRegular(
+            data: text,
+            size: 13,
+            maxLines: 1,
+          ),
         ],
       ),
     );

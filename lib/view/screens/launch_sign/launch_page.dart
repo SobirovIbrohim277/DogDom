@@ -12,9 +12,8 @@ class LaunchPage extends StatelessWidget {
     SizeConfig().init(context);
 
     Timer(const Duration(seconds: 3), () {
-     _setNavigator(const SignPage(), context);
+      _setNavigator(const SignPage(), context);
     });
-
 
     return Scaffold(
       body: Column(
@@ -35,18 +34,6 @@ class LaunchPage extends StatelessWidget {
       ),
     );
   }
-
-  // void _goToPage() async {
-  //   SharedPreferences _pref = await SharedPreferences.getInstance();
-  //   bool isStarted = _pref.getBool("isStarted") ?? false;
-  //   if (!isStarted) {
-  //     _setNavigator(const IntroPage());
-  //   } else if (FirebaseAuth.instance.currentUser == null) {
-  //     _setNavigator(const SignInPage());
-  //   } else {
-  //     _setNavigator(const HomePage());
-  //   }
-  // }
 
   void _setNavigator(Widget page, BuildContext context) {
     Navigator.of(context).pushReplacement(

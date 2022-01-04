@@ -7,7 +7,10 @@ buildTopBarField() => Padding(
         decoration: const InputDecoration(
           border: InputBorder.none,
           hintText: "What you're thinking right now...",
-          hintStyle: TextStyle(fontSize: 13.0, fontWeight: FontWeight.w400),
+          hintStyle: TextStyle(
+            fontSize: 13.0,
+            fontWeight: FontWeight.w400,
+          ),
         ),
       ),
     );

@@ -21,9 +21,10 @@ class MyTextSemibold extends StatelessWidget {
       data,
       textAlign: textAlign,
       style: TextStyle(
-          fontSize: getUniqueW(size),
-          color: color,
-          fontWeight: FontWeight.w600),
+        fontSize: getUniqueW(size),
+        color: color,
+        fontWeight: FontWeight.w600,
+      ),
     );
   }
 }

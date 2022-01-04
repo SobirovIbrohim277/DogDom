@@ -101,8 +101,9 @@ class NoticeCenterPage extends StatelessWidget {
               selectedColor: Colors.red,
               leading: index == 0
                   ? CircleAvatar(
-                      backgroundImage:
-                          AssetImage(MassagesImg.imgs[2].toString()),
+                      backgroundImage: AssetImage(
+                        MassagesImg.imgs[2].toString(),
+                      ),
                       radius: 23,
                     )
                   : const CircleAvatar(
@@ -112,17 +113,23 @@ class NoticeCenterPage extends StatelessWidget {
               title: Text(
                 NoticeListTitle.title[index],
                 style: const TextStyle(
-                    fontSize: 16.0, fontWeight: FontWeight.w500),
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.w500,
+                ),
               ),
               trailing: Text(
                 NoticeListTime.time[index],
                 style: const TextStyle(
-                    fontSize: 11.0, fontWeight: FontWeight.w400),
+                  fontSize: 11.0,
+                  fontWeight: FontWeight.w400,
+                ),
               ),
               subtitle: Text(
                 NoticeListSubtitle.subtitle[index],
                 style: const TextStyle(
-                    fontSize: 13.0, fontWeight: FontWeight.w400),
+                  fontSize: 13.0,
+                  fontWeight: FontWeight.w400,
+                ),
               ),
             ),
           );

@@ -16,40 +16,45 @@ class MyCirclesListView extends StatelessWidget {
       height: getUniqueH(124.0),
       color: grey,
       child: ListView.builder(
-          padding: EdgeInsets.only(left: getUniqueW(18.0)),
-          scrollDirection: Axis.horizontal,
-          physics: const BouncingScrollPhysics(),
-          itemCount: 4,
-          itemBuilder: (context, index) {
-            return InkWell(
-              onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => CircleDetailPage(),
-                ),
+        padding: EdgeInsets.only(left: getUniqueW(18.0)),
+        scrollDirection: Axis.horizontal,
+        physics: const BouncingScrollPhysics(),
+        itemCount: 4,
+        itemBuilder: (context, index) {
+          return InkWell(
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => CircleDetailPage(),
               ),
-              child: Container(
-                margin: EdgeInsets.only(right: getUniqueW(18.0)),
-                padding: EdgeInsets.zero,
-                height: getUniqueH(104.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    CircleAvatar(
-                      foregroundImage: NetworkImage(
-                        'https://source.unsplash.com/random/${index + 1}',
-                      ),
-                      backgroundColor: grey,
-                      radius: getUniqueW(40.0),
+            ),
+            child: Container(
+              margin: EdgeInsets.only(right: getUniqueW(18.0)),
+              padding: EdgeInsets.zero,
+              height: getUniqueH(104.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  CircleAvatar(
+                    foregroundImage: NetworkImage(
+                      'https://source.unsplash.com/random/${index + 1}',
                     ),
-                    SizedBox(height: getUniqueH(6.0)),
-                    MyTextRegular(data: 'Name Surname', size: 13.0,maxLines: 1,),
-                  ],
-                ),
+                    backgroundColor: grey,
+                    radius: getUniqueW(40.0),
+                  ),
+                  SizedBox(height: getUniqueH(6.0)),
+                  MyTextRegular(
+                    data: 'Name Surname',
+                    size: 13.0,
+                    maxLines: 1,
+                  ),
+                ],
               ),
-            );
-          }),
+            ),
+          );
+        },
+      ),
     );
   }
 }

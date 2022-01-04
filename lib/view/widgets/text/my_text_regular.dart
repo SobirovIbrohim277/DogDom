@@ -12,7 +12,8 @@ class MyTextRegular extends StatelessWidget {
       required this.size,
       this.textAlign,
       this.color,
-      Key? key, required int maxLines})
+      Key? key,
+      required int maxLines})
       : super(key: key);
 
   @override
@@ -20,7 +21,10 @@ class MyTextRegular extends StatelessWidget {
     return Text(
       data,
       textAlign: textAlign,
-      style: TextStyle(fontSize: getUniqueW(size), color: color),
+      style: TextStyle(
+        fontSize: getUniqueW(size),
+        color: color,
+      ),
     );
   }
 }

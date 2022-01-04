@@ -20,7 +20,10 @@ class NoticeBar extends StatelessWidget {
           SizedBox(height: getUniqueH(8.0)),
           Text(
             nameOfIcons,
-            style: TextStyle(fontSize: 13.0, fontWeight: FontWeight.w400),
+            style: const TextStyle(
+              fontSize: 13.0,
+              fontWeight: FontWeight.w400,
+            ),
           )
         ],
       ),

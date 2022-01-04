@@ -21,9 +21,10 @@ class MyTextMedium extends StatelessWidget {
       data,
       textAlign: textAlign,
       style: TextStyle(
-          fontSize: getUniqueW(size),
-          color: color,
-          fontWeight: FontWeight.w500),
+        fontSize: getUniqueW(size),
+        color: color,
+        fontWeight: FontWeight.w500,
+      ),
     );
   }
 }

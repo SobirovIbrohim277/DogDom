@@ -6,9 +6,10 @@ Row buildTimeText() => Row(
         Text(
           "01:50",
           style: TextStyle(
-              color: Color.fromRGBO(0, 0, 0, 0.25),
-              fontSize: 11,
-              fontWeight: FontWeight.w400),
+            color: Color.fromRGBO(0, 0, 0, 0.25),
+            fontSize: 11,
+            fontWeight: FontWeight.w400,
+          ),
         ),
       ],
     );
