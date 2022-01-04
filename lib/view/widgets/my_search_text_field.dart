@@ -25,18 +25,13 @@ class MySearchTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //isVisible = Provider.of<TextFieldProvider>(context).isVisible;
     SizeConfig().init(context);
     return TextFormField(
       textAlignVertical: TextAlignVertical.center,
       controller: controller,
       validator: validator,
       keyboardType: textInputType,
-      //obscureText: (keyboardType == TextInputType.visiblePassword && isVisible) ? true : false,
       onChanged: (value) {
-        // Provider.of<TextFieldProvider>(context, listen: false).value =
-        //     value;
-        // context.read<TextFieldProvider>().changValue(value);
       },
       decoration: InputDecoration(
         suffixIcon: suffixIcon,
@@ -45,8 +40,6 @@ class MySearchTextField extends StatelessWidget {
         hintStyle: TextStyle(
           color: black.withOpacity(0.25),
         ),
-        //labelText: labelText,
-        //alignLabelWithHint: true,
 
         filled: true,
         fillColor: grey,

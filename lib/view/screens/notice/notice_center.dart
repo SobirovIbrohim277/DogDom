@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:imtihon/core/constants/size_config.dart';
-import 'package:imtihon/view/screens/notice/modul/masseges_moduls.dart';
+import 'package:imtihon/view/screens/massages/modul/massages_modul.dart';
 import 'package:imtihon/view/screens/notice/modul/notile_list_text.dart';
 import 'package:imtihon/view/screens/notice/widgets/notice_bar.dart';
 import 'package:imtihon/view/screens/notice/widgets/notice_widgets.dart';
